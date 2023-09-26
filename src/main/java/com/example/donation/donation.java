@@ -2,13 +2,12 @@ package com.example.donation;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
-@SpringBootApplication(exclude={DataSourceAutoConfiguration.class})
-public class ParkingApplication {
+@SpringBootApplication
+public class donation {
 
     public static void main(String[] args) {
-        SpringApplication.run(ParkingApplication.class, args);
+        SpringApplication.run(donation.class, args);
     }
 
 }
