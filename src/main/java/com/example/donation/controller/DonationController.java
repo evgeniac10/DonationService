@@ -15,6 +15,12 @@ import java.util.List;
 @Controller
 @RequestMapping("/donations")
 public class DonationController {
+
+    @GetMapping("/login")
+    public String loginPage() {
+        return "login";
+    }
+
     @Autowired
     private DonationService donationService;
 
