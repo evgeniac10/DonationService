@@ -23,6 +23,14 @@ public class DonationController {
     UserRepository userRepository;
     @Autowired
     UserService userService;
+
+    @GetMapping("/main")
+    public String main(){
+        return "main";
+    }
+
+
+
     @GetMapping("/login")
     public String loginPageForm() {
         return "login";
@@ -31,7 +39,7 @@ public class DonationController {
     @PostMapping("/login")
     public String login(@ModelAttribute User user){
         userService.saveUser(user);
-        return "redirect:/list";
+        return "redirect:/donations/main";
     }
 
     @Autowired
@@ -54,7 +62,7 @@ public class DonationController {
         @PostMapping("/create")
         public String createDonation(@ModelAttribute("donation") Donation donation) {
             donationService.saveDonation(donation);
-            return "redirect:/donations/list";
+            return "redirect:/donations/main";
         }
     }
 
